@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 public static class EditorGyro {
 	#if UNITY_EDITOR_WIN
 	[DllImport("GyroDLL", EntryPoint = "GyroInitialize")]
-    private static extern int Initialize();
+	private static extern int Initialize();
 	[DllImport("GyroDLL", EntryPoint = "GyroIsInitialized")]
-    private static extern int IsInitialized();
+	private static extern int IsInitialized();
 	[DllImport("GyroDLL", EntryPoint = "GyroGetRotation")]
-    private static extern Quaternion GetRawRotation();
+	private static extern Quaternion GetRawRotation();
 
 	static bool _isInitialized = false;
 	/// <summary>
