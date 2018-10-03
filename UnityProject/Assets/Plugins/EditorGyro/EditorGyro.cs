@@ -22,9 +22,8 @@ public static class EditorGyro {
 	/// your platform of preference.
 	/// </summary>
 	public static Quaternion GetRotation() {
-		if (_isInitialized == false) {
-			_isInitialized = Initialize() >= 0;
-		}
+		if (!_isInitialized) _isInitialized = Initialize() >= 0;
+		if (!_isInitialized) return Quaternion.identity;
 		return Quaternion.AngleAxis(90, Vector3.right) * GetRawRotation();
 	}
 	#else
